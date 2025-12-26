@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${urbanist.className} antialiased`}>
         <Navbar />
         <main className="pt-20">
-          {children}
+        {children}
         </main>
       </body>
     </html>

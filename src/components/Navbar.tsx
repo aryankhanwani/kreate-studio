@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -192,11 +192,11 @@ export default function Navbar() {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center space-x-2 bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors font-medium"
+            className="hidden lg:inline-flex items-center gap-0 bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium group overflow-hidden hover:gap-2"
           >
             <span>Contact Us</span>
             <svg
-              className="w-4 h-4"
+              className="w-0 h-4 opacity-0 group-hover:w-4 group-hover:opacity-100 transition-all duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -314,12 +314,12 @@ export default function Navbar() {
             <div className="mt-6 pt-6 border-t border-gray-100">
               <Link
                 href="/contact"
-                className="flex items-center justify-center space-x-2 bg-gray-900 text-white px-6 py-4 rounded-full hover:bg-gray-800 transition-all duration-200 font-medium shadow-lg hover:shadow-xl w-full"
+                className="flex items-center justify-center gap-0 bg-gray-900 text-white px-6 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium shadow-lg hover:shadow-xl w-full group overflow-hidden active:scale-95 hover:gap-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span>Contact Us</span>
                 <svg
-                  className="w-4 h-4"
+                  className="w-0 h-4 opacity-0 group-hover:w-4 group-hover:opacity-100 transition-all duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
