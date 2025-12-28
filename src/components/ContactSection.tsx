@@ -162,9 +162,9 @@ export default function ContactSection() {
                     key={service}
                     type="button"
                     onClick={() => toggleService(service)}
-                    className={`px-4 py-2 border text-sm font-medium transition-all duration-200 rounded-full ${
+                    className={`px-4 py-2 border text-sm font-medium transition-all duration-200  ${
                       selectedServices.includes(service)
-                        ? 'border-gray-900 bg-gray-900 text-white'
+                        ? ' bg-gray-200 text-gray-900'
                         : 'border-gray-300 bg-white text-gray-700 hover:border-gray-900'
                     }`}
                   >
@@ -194,7 +194,7 @@ export default function ContactSection() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-0 bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium group overflow-hidden hover:gap-2"
+                    className="w-full inline-flex items-center cursor-pointer justify-center gap-0 bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium group overflow-hidden hover:gap-2"
                   >
                     <span>Book a Call</span>
                     <svg
