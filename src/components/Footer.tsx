@@ -40,10 +40,10 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white pt-16 md:pt-20 lg:pt-24 pb-8 overflow-hidden">
+    <footer className="bg-black text-white pt-12 md:pt-16 lg:pt-20 xl:pt-24 pb-6 md:pb-8 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8 mb-12 md:mb-16">
           {/* Company Info Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
@@ -55,12 +55,12 @@ export default function Footer() {
                 className="h-6 w-auto brightness-0 invert"
               />
             </Link>
-            <p className="text-gray-400 text-base leading-relaxed mb-8">
+            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
               Kreate Studio is a global UI/UX design agency that boosts brand value with user-friendly, effective designs for web, mobile, and SaaS platforms.
             </p>
             <Link
               href="/company-deck.pdf"
-              className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 font-medium group"
+              className="inline-flex items-center gap-2 bg-white text-black px-5 md:px-6 py-2.5 md:py-3 rounded-full hover:bg-gray-100 transition-all duration-300 font-medium group text-sm md:text-base"
             >
               <span>Our Work</span>
               <svg
@@ -81,13 +81,13 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Services</h3>
+            <h3 className="text-white text-base md:text-lg font-semibold mb-4 md:mb-6">Services</h3>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
                     href={service.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-base inline-block"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm md:text-base inline-block"
                   >
                     {service.title}
                   </Link>
@@ -98,13 +98,13 @@ export default function Footer() {
 
           {/* Case Studies Column */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Case studies</h3>
+            <h3 className="text-white text-base md:text-lg font-semibold mb-4 md:mb-6">Case studies</h3>
             <ul className="space-y-3">
               {caseStudies.map((study, index) => (
                 <li key={index}>
                   <Link
                     href={study.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-base inline-block"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm md:text-base inline-block"
                   >
                     {study.title}
                   </Link>
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Contact</h3>
+            <h3 className="text-white text-base md:text-lg font-semibold mb-4 md:mb-6">Contact</h3>
             <ul className="space-y-3">
               {contact.map((item, index) => (
                 <li key={index}>
@@ -123,7 +123,7 @@ export default function Footer() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-base inline-block"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm md:text-base inline-block"
                   >
                     {item.title}
                   </Link>
@@ -137,14 +137,14 @@ export default function Footer() {
         <div className="pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Social Links */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 md:gap-6 flex-wrap justify-center md:justify-start">
               {socialLinks.map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-lg"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-base md:text-lg"
                 >
                   {social.title}
                 </Link>
@@ -152,14 +152,14 @@ export default function Footer() {
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <p className="text-white text-base mb-1">Let&apos;s work together</p>
-                <p className="text-white text-3xl font-bold">Call Kreate Studio</p>
+            <div className="flex items-center gap-3 md:gap-4">
+              <div className="text-center md:text-right">
+                <p className="text-white text-sm md:text-base mb-1">Let&apos;s work together</p>
+                <p className="text-white text-xl md:text-2xl lg:text-3xl font-bold">Call Kreate Studio</p>
               </div>
               <Link
                 href="/contact"
-                className="flex items-center justify-center w-14 h-14 bg-white rounded-full hover:bg-gray-100 transition-all duration-300 group shrink-0"
+                className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-white rounded-full hover:bg-gray-100 transition-all duration-300 group shrink-0"
               >
                 <svg
                   className="w-6 h-6 text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
@@ -180,21 +180,21 @@ export default function Footer() {
         </div>
 
         {/* Horizontal Rule */}
-        <hr className="border-gray-800 my-12" />
+        <hr className="border-gray-800 my-8 md:my-12" />
 
         {/* Copyright and Large Logo Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-          <p className="text-gray-500 text-lg">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 mb-6 md:mb-8">
+          <p className="text-gray-500 text-sm md:text-lg text-center md:text-left">
             Kreate Studio LLC © 2025
           </p>
-          <p className="text-gray-500 text-lg text-center md:text-right">
+          <p className="text-gray-500 text-sm md:text-lg text-center md:text-right">
             Kreate Studio is a limited liability company based in 🇺🇸 🇮🇳 🇩🇪
           </p>
         </div>
       </div>
 
       {/* Large Full-Width Logo - Outside Container */}
-      <div className="relative w-full left-1/2 right-1/2 top-24 -mx-[50vw] overflow-y-hidden py-8 px-4 sm:px-6 lg:px-8" >
+      <div className="relative w-full left-1/2 right-1/2 top-12 md:top-20 lg:top-24 -mx-[50vw] overflow-y-hidden pb-6 md:pb-8 px-4 sm:px-6 lg:px-8" >
         <Image
           src="/logo.svg"
           alt="Kreate Studio"
