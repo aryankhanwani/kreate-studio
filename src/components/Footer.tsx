@@ -48,11 +48,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/logo.svg"
+                src="/logo-2.svg"
                 alt="Kreate Studio"
                 width={180}
                 height={24}
-                className="h-6 w-auto brightness-0 invert"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
@@ -185,10 +185,10 @@ export default function Footer() {
         {/* Copyright and Large Logo Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 mb-6 md:mb-8">
           <p className="text-gray-500 text-sm md:text-lg text-center md:text-left">
-            Kreate Studio LLC © 2025
+            Kreate Studio © 2025
           </p>
           <p className="text-gray-500 text-sm md:text-lg text-center md:text-right">
-            Kreate Studio is a limited liability company based in 🇺🇸 🇮🇳 🇩🇪
+            Kreate Studio is a design agency based in 🇩🇪
           </p>
         </div>
       </div>
@@ -196,11 +196,11 @@ export default function Footer() {
       {/* Large Full-Width Logo - Outside Container */}
       <div className="relative w-full left-1/2 right-1/2 top-12 md:top-20 lg:top-24 -mx-[50vw] overflow-y-hidden pb-6 md:pb-8 px-4 sm:px-6 lg:px-8" >
         <Image
-          src="/logo.svg"
+          src="/logo-2.svg"
           alt="Kreate Studio"
           width={2000}
           height={200}
-          className="w-full h-auto brightness-0 invert"
+          className="w-full h-auto"
         />
       </div>
     </footer>

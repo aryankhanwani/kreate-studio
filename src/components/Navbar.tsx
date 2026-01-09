@@ -30,8 +30,8 @@ const services = [
   { title: 'Content Strategy', href: '/services/content-strategy', icon: FileText, color: 'text-indigo-600' },
   { title: 'E-commerce Solutions', href: '/services/ecommerce-solutions', icon: ShoppingCart, color: 'text-red-600' },
   { title: 'Cloud Services', href: '/services/cloud-services', icon: Cloud, color: 'text-cyan-600' },
-  { title: 'AI & Machine Learning', href: '/services/ai-machine-learning', icon: Brain, color: 'text-violet-600' },
-  { title: 'Consulting', href: '/services/consulting', icon: Lightbulb, color: 'text-amber-600' },
+  { title: 'Prototyping', href: '/services/prototyping', icon: Brain, color: 'text-violet-600' },
+  { title: 'Animation & Motion', href: '/services/animation-motion', icon: Lightbulb, color: 'text-amber-600' },
   { title: 'Product Design', href: '/services/product-design', icon: Layers, color: 'text-teal-600' },
   { title: 'Video Production', href: '/services/video-production', icon: Video, color: 'text-rose-600' },
   { title: 'Social Media Management', href: '/services/social-media-management', icon: Share2, color: 'text-sky-600' },
@@ -72,12 +72,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.svg"
+              src="/logo-1.svg"
               alt="Kreate Studio"
               width={180}
               height={24}
               priority
-              className="h-6 w-auto"
+              className="h-12 w-auto brightness-0 invert"
             />
           </Link>
 
