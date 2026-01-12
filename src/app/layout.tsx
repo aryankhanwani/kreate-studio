@@ -12,6 +12,10 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   title: "Kreate Studio - Digital Agency",
   description: "Transform your digital presence with Kreate Studio",
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
@@ -21,6 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+      </head>
       <body className={`${urbanist.className} antialiased`}>
         <Navbar />
         <main className="pt-20">
