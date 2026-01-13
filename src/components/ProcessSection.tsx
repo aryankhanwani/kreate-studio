@@ -110,19 +110,19 @@ export default function ProcessSection() {
     {
       number: '/01',
       title: 'Strategic Discovery',
-      description: 'We align on your vision, goals, and user needs within 48 hours. No fluff, just pure strategy.',
+      description: 'Deep dive into your vision and goals. Clear roadmap delivered within 48 hours.',
       infographic: DiscoveryInfographic,
     },
     {
       number: '/02',
       title: 'Rapid Execution',
-      description: 'Our elite team designs and builds in parallel. We ship high-fidelity results every single week.',
+      description: 'Design and development run in parallel. Weekly deliverables, no exceptions.',
       infographic: ExecutionInfographic,
     },
     {
       number: '/03',
       title: 'Scalable Delivery',
-      description: 'Launch with confidence. We provide a battle-tested product ready for your next million users.',
+      description: 'Launch-ready product with full documentation. Built to scale from day one.',
       infographic: DeliveryInfographic,
     },
   ];

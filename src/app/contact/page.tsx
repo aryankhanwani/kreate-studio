@@ -118,10 +118,10 @@ export default function ContactPage() {
                       Email Us
                     </h3>
                     <a
-                      href="mailto:hello@kreatestudio.com"
+                      href="mailto:teamkreatestudio@gmail.com"
                       className="text-base text-gray-600 hover:text-gray-900 transition-colors"
                     >
-                      hello@kreatestudio.com
+                      teamkreatestudio@gmail.com
                     </a>
                   </div>
                 </div>
@@ -138,13 +138,13 @@ export default function ContactPage() {
                       Location
                     </h3>
                     <p className="text-base text-gray-600">
-                      Germany 🇩🇪
+                      India 🇮🇳
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Response Time Card */}
+              {/* Availability Card */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start gap-4">
                   <div className="bg-gray-100 p-3 rounded-xl">
@@ -152,10 +152,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">
-                      Response Time
+                      Availability
                     </h3>
                     <p className="text-base text-gray-600">
-                      Within 24 hours
+                      Mon - Sat, 10AM - 7PM IST
                     </p>
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                   Schedule a call with our team to discuss your project in detail.
                 </p>
                 <a
-                  href="mailto:hello@kreatestudio.com"
+                  href="mailto:teamkreatestudio@gmail.com"
                   className="inline-flex items-center gap-2 bg-white text-gray-900 px-4 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 font-medium text-sm group"
                 >
                   <span>Book a Call</span>

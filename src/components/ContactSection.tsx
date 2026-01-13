@@ -110,10 +110,10 @@ export default function ContactSection() {
                   Email
                 </h3>
                 <a
-                  href="mailto:hello@kreatestudio.com"
+                  href="mailto:teamkreatestudio@gmail.com"
                   className="text-base md:text-lg text-gray-600 hover:text-gray-900 transition-colors"
                 >
-                  hello@kreatestudio.com
+                  teamkreatestudio@gmail.com
                 </a>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
@@ -121,15 +121,15 @@ export default function ContactSection() {
                   Location
                 </h3>
                 <p className="text-base md:text-lg text-gray-600">
-                  Germany 🇩🇪
+                  India 🇮🇳
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
                 <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">
-                  Response Time
+                  Availability
                 </h3>
                 <p className="text-base md:text-lg text-gray-600">
-                  Within 24 hours
+                  Mon - Sat, 10AM - 7PM IST
                 </p>
               </div>
             </div>

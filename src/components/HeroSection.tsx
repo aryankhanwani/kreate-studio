@@ -4,10 +4,11 @@ import Image from 'next/image';
 import { TextRotate } from '@/components/ui/text-rotate';
 
 const words = [
-  'future unicorns.',
-  'startups.',
-  'AI/ML solutions.',
-  'SaaS companies.',
+  'ambitious brands.',
+  'industry leaders.',
+  'scaling startups.',
+  'global enterprises.',
+  'visionary founders.',
 ];
 
 export default function HeroSection() {
@@ -30,9 +31,8 @@ export default function HeroSection() {
         <div className="lg:hidden space-y-6">
           {/* Hero Text */}
           <h1 className="font-bold text-gray-900 leading-[1.1] flex flex-wrap items-end text-[38px]">
-            <span>Crafting digital excellence for</span>
+            <span>We design & develop digital products for</span>
             <br className="basis-full" />
-            {/* <span>excellence for</span> */}
             <br className="basis-full" />
             <TextRotate
               texts={words}
@@ -52,7 +52,7 @@ export default function HeroSection() {
           {/* Subtext */}
           <div className="space-y-3">
             <p className="text-md text-gray-600 leading-relaxed">
-              We transform bold ideas into exceptional digital experiences for startups and enterprises worldwide.
+              Strategic design and development partner for businesses ready to scale. We deliver pixel-perfect interfaces and robust solutions that drive growth.
             </p>
             
           </div>
@@ -117,7 +117,9 @@ export default function HeroSection() {
               </svg>
             </a>
             <a
-              href="/services"
+              href="https://www.figma.com/proto/2suiuZtzEbBlWxNeLYkRWA/Portfolio-Deck?node-id=2-12&t=flwIA4rbapQ5yvO2-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center space-x-2 bg-white text-gray-900 px-6 py-3 rounded-full border-2 border-gray-200 hover:border-gray-900 hover:bg-gray-50 transition-all duration-300 font-medium text-base group hover:scale-105 active:scale-95"
             >
               <Image
@@ -137,9 +139,9 @@ export default function HeroSection() {
           {/* Left Column - Hero Text */}
           <div>
             <h1 className="font-bold text-gray-900 mb-8 leading-[1.1] flex flex-wrap items-end text-7xl">
-              <span>Crafting digital</span>
+              <span>We design & develop</span>
               <br className="basis-full" />
-              <span>excellence for</span>
+              <span>digital products for</span>
               <br className="basis-full" />
               <TextRotate
                 texts={words}
@@ -178,7 +180,9 @@ export default function HeroSection() {
                 </svg>
               </a>
               <a
-                href="/services"
+                href="https://www.figma.com/proto/2suiuZtzEbBlWxNeLYkRWA/Portfolio-Deck?node-id=2-12&t=flwIA4rbapQ5yvO2-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-2 bg-white text-gray-900 px-8 py-4 rounded-full border-2 border-gray-200 hover:border-gray-900 hover:bg-gray-50 transition-all duration-300 font-medium text-lg group hover:scale-105 active:scale-95"
               >
                 <Image
@@ -196,7 +200,7 @@ export default function HeroSection() {
           {/* Right Column - Short Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-600 leading-relaxed">
-            We transform bold ideas into exceptional digital experiences for startups and enterprises worldwide. Let's build something extraordinary.
+            Strategic design and development partner for businesses ready to scale. We deliver pixel-perfect interfaces and robust solutions that drive growth.
             </p>
 
             {/* Reviews/Testimonials */}
@@ -259,8 +263,8 @@ export default function HeroSection() {
         <div className="mt-12 md:mt-20 lg:mt-24">
           {/* Title */}
           <h2 className="text-2xl md:text-4xl lg:text-[52px] font-bold text-gray-900 mb-8 md:mb-16 leading-tight max-w-5xl">
-            <span className="text-gray-900">Bold UX design, billion-dollar proof. We measure impact,</span>
-            <span className="text-gray-600">not just ship pixels.</span>
+            <span className="text-gray-900">Our work speaks for itself. We don't just ship pixels,</span>
+            <span className="text-gray-600"> we deliver results.</span>
           </h2>
 
           {/* Stats Cards Grid */}
@@ -268,36 +272,36 @@ export default function HeroSection() {
             {/* Card 1 - Equal size (4 columns) */}
             <div className="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] md:col-span-4">
               <div className="text-sm md:text-base text-gray-400 font-mono mb-12 md:mb-24">/01</div>
-              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">92%</div>
+              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">98%</div>
               <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">client satisfaction in post-project reviews.</div>
             </div>
 
             {/* Card 2 - Equal size (4 columns) */}
             <div className="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] md:col-span-4">
               <div className="text-sm md:text-base text-gray-400 font-mono mb-12 md:mb-24">/02</div>
-              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">$10B+</div>
-              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">valuation influenced by our design</div>
+              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">20+</div>
+              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">businesses served with our expertise across industries.</div>
             </div>
 
             {/* Card 3 - Equal size (4 columns) */}
             <div className="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] md:col-span-4">
               <div className="text-sm md:text-base text-gray-400 font-mono mb-12 md:mb-24">/03</div>
-              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">2019</div>
-              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">Founded, 6 years of experience</div>
+              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">Ahmedabad</div>
+              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">Based in Ahmedabad, India, we serve clients worldwide.</div>
             </div>
 
             {/* Card 4 - Equal (6 columns) */}
             <div className="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] md:col-span-6">
               <div className="text-sm md:text-base text-gray-400 font-mono mb-12 md:mb-24">/04</div>
-              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">25M+</div>
-              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">monthly visits on client platforms</div>
+              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">Talented Team</div>
+              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">We have a team of talented designers and developers who are dedicated to delivering the best possible products for their clients.</div>
             </div>
 
             {/* Card 5 - Equal (6 columns) */}
             <div className="bg-white rounded-2xl p-4 md:p-8 border border-gray-100 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] md:col-span-6">
               <div className="text-sm md:text-base text-gray-400 font-mono mb-12 md:mb-24">/05</div>
-              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">500+</div>
-              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">global projects, 250+ testimonials. Trusted by YC-backed, VC-funded, a16z, Sequoia</div>
+              <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-none">Your Kreative Partner</div>
+              <div className="text-sm md:text-lg text-gray-600 font-medium leading-relaxed">Discovery, design, development, deployment, we handle every stage with the same obsessive attention to detail.</div>
             </div>
           </div>
         </div>

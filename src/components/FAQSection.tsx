@@ -5,31 +5,31 @@ import { useState } from 'react';
 const faqs = [
   {
     question: "What services does Kreate Studio offer?",
-    answer: "We specialize in brand identity, web development, mobile apps, UI/UX design, and digital marketing. Our full-service approach ensures your digital presence is cohesive and impactful across all platforms."
+    answer: "We provide end-to-end digital solutions: UI/UX Design (consulting, research, audits, visual design), Web & Mobile Development (full-stack, e-commerce, native apps), Brand Identity, Product Strategy, and Production Services (video, photography, motion graphics). Everything you need under one roof."
+  },
+  {
+    question: "How does your UI/UX design process work?",
+    answer: "We start with UX Research and Consulting to understand your users and goals. Then we conduct UX Audits and Usability Testing on existing products, followed by UI/UX Design and Design System creation. Every decision is backed by data and user insights."
+  },
+  {
+    question: "What development technologies do you work with?",
+    answer: "Our team is proficient in full-stack development including React, Next.js, Node.js, and modern frameworks. We build progressive web apps, native iOS/Android applications, e-commerce platforms, and custom software solutions with API integrations."
   },
   {
     question: "How long does a typical project take?",
-    answer: "Project timelines vary based on scope and complexity. A basic website typically takes 4-6 weeks, while comprehensive brand identity projects may take 8-12 weeks. We provide detailed timelines during our discovery phase."
+    answer: "Timelines vary by scope: UI/UX audits take 1-2 weeks, website designs 3-4 weeks, full web development 6-10 weeks, and mobile apps 8-12 weeks. We provide detailed timelines during our Strategic Discovery phase."
   },
   {
-    question: "What is your design process?",
-    answer: "Our process includes three key phases: Strategic Discovery (48 hours), Rapid Execution (weekly deliverables), and Scalable Delivery (launch-ready product). We maintain transparent communication throughout."
-  },
-  {
-    question: "Do you work with startups or only established companies?",
-    answer: "We work with both! From early-stage startups to established enterprises, we've helped companies at every stage. We're experienced with YC-backed startups, VC-funded companies, and Fortune 500 organizations."
+    question: "Do you offer production services for video and content?",
+    answer: "Yes! Our Production Services include video production, photography, motion graphics, 3D rendering, and post-production. We handle everything from concept to final delivery, ensuring high-quality visual content for your brand."
   },
   {
     question: "What are your pricing models?",
-    answer: "We offer flexible pricing based on project scope: fixed-price projects, monthly retainers, and hourly consulting. We'll recommend the best model during our initial consultation based on your needs."
+    answer: "We offer flexible pricing: fixed-price projects for defined scopes, monthly retainers for ongoing design and development support, and hourly consulting for UX audits and strategic sessions. We'll recommend the best fit during our initial call."
   },
   {
-    question: "Can you help with ongoing maintenance and support?",
-    answer: "Absolutely! We offer ongoing maintenance packages, technical support, and continuous improvement services. Many clients partner with us long-term for their evolving digital needs."
-  },
-  {
-    question: "How do you ensure project success?",
-    answer: "We combine strategic planning, agile execution, and data-driven decisions. With 92% client satisfaction, $10B+ in influenced valuation, and 500+ successful projects, our track record speaks for itself."
+    question: "Do you work with startups or only established companies?",
+    answer: "We partner with both! From early-stage startups needing MVP design to enterprises requiring design system audits and scalable development. Our process adapts to your stage and budget while maintaining quality."
   }
 ];
 

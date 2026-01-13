@@ -1,20 +1,66 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
+import Link from 'next/link';
 
 export default function BannerCTASection() {
   const [scrollY, setScrollY] = useState(0);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [smoothCursorPosition, setSmoothCursorPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isCursorVisible, setIsCursorVisible] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
+
+  // Check if cursor is within banner bounds
+  const checkCursorInBanner = useCallback(() => {
+    if (!bannerRef.current || !isHovering) return;
+    
+    const rect = bannerRef.current.getBoundingClientRect();
+    const cursorY = smoothCursorPosition.y;
+    
+    // Check if cursor position is within the visible banner area
+    const isInBounds = cursorY >= rect.top && cursorY <= rect.bottom;
+    setIsCursorVisible(isInBounds);
+  }, [isHovering, smoothCursorPosition.y]);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      // Check cursor bounds on scroll
+      checkCursorInBanner();
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [checkCursorInBanner]);
+
+  // Smooth cursor animation
+  useEffect(() => {
+    let animationFrameId: number;
+    
+    const animate = () => {
+      setSmoothCursorPosition(prev => ({
+        x: prev.x + (cursorPosition.x - prev.x) * 0.15,
+        y: prev.y + (cursorPosition.y - prev.y) * 0.15,
+      }));
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    
+    if (isHovering) {
+      animationFrameId = requestAnimationFrame(animate);
+    }
+    
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [cursorPosition, isHovering]);
+
+  // Update cursor visibility when smooth position changes
+  useEffect(() => {
+    checkCursorInBanner();
+  }, [smoothCursorPosition, checkCursorInBanner]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     setCursorPosition({
@@ -23,95 +69,95 @@ export default function BannerCTASection() {
     });
   };
 
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsHovering(true);
+    setIsCursorVisible(true);
+    // Initialize smooth cursor position to current mouse position
+    setSmoothCursorPosition({
+      x: e.clientX,
+      y: e.clientY,
+    });
+    setCursorPosition({
+      x: e.clientX,
+      y: e.clientY,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    setIsCursorVisible(false);
+  };
+
   return (
-    <div
-      className="relative w-full overflow-hidden cursor-none"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-      onMouseMove={handleMouseMove}
-    >
-      {/* Custom Cursor */}
-      {isHovering && (
-        <div
-          className="fixed pointer-events-none z-50"
-          style={{
-            left: `${cursorPosition.x}px`,
-            top: `${cursorPosition.y}px`,
-            transform: 'translate(-50%, -50%)',
-          }}
-        >
-          <div className="relative w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-gray-900 absolute top-24 right-12 font-bold text-xs md:text-sm tracking-wider mb-1">
-                BOOK A CALL
+    <Link href="/contact">
+      <div
+        ref={bannerRef}
+        className="relative w-full overflow-hidden cursor-none"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
+      >
+        {/* Custom Cursor - Smooth */}
+        {isCursorVisible && (
+          <div
+            className="fixed pointer-events-none z-50 will-change-transform"
+            style={{
+              left: `${smoothCursorPosition.x}px`,
+              top: `${smoothCursorPosition.y}px`,
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            <div className="relative w-28 h-28 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center shadow-2xl">
+              <div className="text-center flex flex-col items-center justify-center gap-2">
+                <svg
+                  className="w-6 h-6 md:w-7 md:h-7 text-gray-900"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M7 17L17 7M17 7H7M17 7v10"
+                  />
+                </svg>
+                <div className="text-gray-900 font-bold text-xs md:text-sm tracking-wider">
+                  BOOK A CALL
+                </div>
               </div>
-            <svg
-              className="absolute top-4 right-8 w-5 h-5 md:w-6 md:h-6 text-gray-900"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 17L17 7M17 7H7M17 7v10"
-              />
-            </svg>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Parallax Background */}
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500"
-        style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
-        }}
-      >
-        {/* Overlay Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px',
-          }}></div>
+        {/* Background */}
+        <div
+          className="absolute inset-0 bg-black"
+          style={{
+            transform: `translateY(${scrollY * 0.3}px)`,
+          }}
+        >
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-[0.03]">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
+              backgroundSize: '60px 60px',
+            }}></div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 py-24 md:py-36 lg:py-44">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-[1.1] tracking-tight">
+              Let&apos;s Build
+              <br />
+              <span className="text-white/60">Something Great</span>
+            </h2>
+          </div>
         </div>
       </div>
-
-      {/* Content */}
-      <div className="relative z-10 py-20 md:py-32 lg:py-40">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight">
-            Ready to transform
-            <br />
-            your digital presence?
-          </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-12 max-w-3xl mx-auto">
-            Let&apos;s create something extraordinary together. Your vision, our expertise.
-          </p>
-          {/* <a
-            href="/contact"
-            className="inline-flex items-center gap-0 bg-white text-gray-900 px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 font-medium group shadow-2xl overflow-hidden hover:gap-2"
-          >
-            <span>Get Started Today</span>
-            <svg
-              className="w-0 h-4 opacity-0 group-hover:w-4 group-hover:opacity-100 transition-all duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 17L17 7M17 7H7M17 7v10"
-              />
-            </svg>
-          </a> */}
-        </div>
-      </div>
-    </div>
+    </Link>
   );
 }
 

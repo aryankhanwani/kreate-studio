@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ProjectsSection() {
   return (
@@ -15,14 +16,19 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
           {/* Project 1 */}
           <div>
-            <div className="aspect-video bg-gray-100 mb-4 rounded-xl flex items-center justify-center">
-              <span className="text-4xl md:text-6xl font-bold text-gray-300">proj-1</span>
+            <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
+              <Image
+                src="/proj-11.png"
+                alt="Project 1"
+                fill
+                className="object-cover object-[50%_100%]"
+              />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Project Title 1</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">K - Couture Landing page</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
               <span>Web Design</span>
               <span>•</span>
-              <span>Branding</span>
+              <span>Responsive Design</span>
               <span>•</span>
               <span>UI/UX</span>
             </div>
@@ -30,46 +36,61 @@ export default function ProjectsSection() {
 
           {/* Project 2 */}
           <div>
-            <div className="aspect-video bg-gray-100 mb-4 rounded-xl flex items-center justify-center">
-              <span className="text-4xl md:text-6xl font-bold text-gray-300">proj-2</span>
+            <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
+              <Image
+                src="/proj-2.png"
+                alt="Project 2"
+                fill
+                className="object-cover object-[50%_4%]"
+              />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Project Title 2</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">CyberGuard - AI threat Detection</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
-              <span>Mobile App</span>
+              <span>UI/UX </span>
               <span>•</span>
-              <span>Development</span>
+              <span>Responsive Design</span>
               <span>•</span>
-              <span>iOS</span>
+              <span>SaaS </span>
             </div>
           </div>
 
           {/* Project 3 */}
           <div>
-            <div className="aspect-video bg-gray-100 mb-4 rounded-xl flex items-center justify-center">
-              <span className="text-4xl md:text-6xl font-bold text-gray-300">proj-3</span>
+            <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
+              <Image
+                src="/proj-3.png"
+                alt="Project 3"
+                fill
+                className="object-cover object-[50%_0%]"
+              />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Project Title 3</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Senti - Smart Stablecoin wallet</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
-              <span>E-commerce</span>
+              <span>Web3</span>
               <span>•</span>
-              <span>Platform</span>
+              <span>App Design</span>
               <span>•</span>
-              <span>SaaS</span>
+              <span>UX Design</span>
             </div>
           </div>
 
           {/* Project 4 */}
           <div>
-            <div className="aspect-video bg-gray-100 mb-4 rounded-xl flex items-center justify-center">
-              <span className="text-4xl md:text-6xl font-bold text-gray-300">proj-4</span>
+            <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
+              <Image
+                src="/proj-4.png"
+                alt="Project 4"
+                fill
+                className="object-cover object-[50%_0%] scale-120"
+              />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Project Title 4</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Myopini - Opinion Trading Platform</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
-              <span>Dashboard</span>
+              <span>App design</span>
               <span>•</span>
-              <span>Analytics</span>
+              <span>Design System</span>
               <span>•</span>
-              <span>Data Visualization</span>
+              <span>Branding </span>
             </div>
           </div>
         </div>
