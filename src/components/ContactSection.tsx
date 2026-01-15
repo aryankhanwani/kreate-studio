@@ -147,45 +147,45 @@ export default function ContactSection() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit}>
-                <div className="space-y-6">
-              {/* Name Field */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-6">
+            {/* Name Field */}
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
                   Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              </label>
+              <input
+                type="text"
+                id="name"
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 outline-none transition-all text-gray-900 bg-white"
                   placeholder="John Doe"
-                />
-              </div>
+              />
+            </div>
 
-              {/* Email Field */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+            {/* Email Field */}
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
                   Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              </label>
+              <input
+                type="email"
+                id="email"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 outline-none transition-all text-gray-900 bg-white"
                   placeholder="john@example.com"
-                />
-              </div>
+              />
+            </div>
 
-              {/* Budget Field */}
-              <div>
-                <label htmlFor="budget" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Project Budget *
-                </label>
+            {/* Budget Field */}
+            <div>
+              <label htmlFor="budget" className="block text-sm font-semibold text-gray-900 mb-2">
+                Project Budget *
+              </label>
                 <CustomSelect
                   id="budget"
                   value={formData.budget}
@@ -200,74 +200,74 @@ export default function ContactSection() {
                   placeholder="Select budget range"
                   required
                 />
-              </div>
+            </div>
 
-              {/* Services Selection */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-3">
+            {/* Services Selection */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-900 mb-3">
                   Services Needed (Select all that apply) *
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {services.map((service) => (
-                    <button
-                      key={service}
-                      type="button"
-                      onClick={() => toggleService(service)}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {services.map((service) => (
+                  <button
+                    key={service}
+                    type="button"
+                    onClick={() => toggleService(service)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
-                        selectedServices.includes(service)
+                      selectedServices.includes(service)
                           ? 'bg-gray-900 text-white'
                           : 'border border-gray-300 bg-white text-gray-700 hover:border-gray-900'
-                      }`}
-                    >
-                      {service}
-                    </button>
-                  ))}
-                </div>
+                    }`}
+                  >
+                    {service}
+                  </button>
+                ))}
               </div>
+            </div>
 
-              {/* Project Description */}
-              <div>
-                <label htmlFor="project" className="block text-sm font-semibold text-gray-900 mb-2">
+            {/* Project Description */}
+            <div>
+              <label htmlFor="project" className="block text-sm font-semibold text-gray-900 mb-2">
                   Tell Us About Your Project *
-                </label>
-                <textarea
-                  id="project"
-                  required
-                  rows={6}
-                  value={formData.project}
-                  onChange={(e) => setFormData({ ...formData, project: e.target.value })}
+              </label>
+              <textarea
+                id="project"
+                required
+                rows={6}
+                value={formData.project}
+                onChange={(e) => setFormData({ ...formData, project: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 outline-none transition-all text-gray-900 bg-white resize-none"
                   placeholder="Describe your project goals, target audience, key features, and any specific requirements..."
-                />
-              </div>
+              />
+            </div>
 
-                  {/* Submit Button */}
-                  <div className="pt-4">
-                    <button
-                      type="submit"
+                {/* Submit Button */}
+                <div className="pt-4">
+                  <button
+                    type="submit"
                       disabled={isSubmitting || selectedServices.length === 0}
                       className="w-full inline-flex items-center cursor-pointer justify-center gap-0 bg-gray-900 text-white px-6 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium group overflow-hidden hover:gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
+                  >
                       <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                      <svg
+                    <svg
                         className={`w-0 h-4 opacity-0 group-hover:w-4 group-hover:opacity-100 transition-all duration-300 ${
                           isSubmitting ? '' : 'group-hover:translate-x-1'
                         }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M7 17L17 7M17 7H7M17 7v10"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 17L17 7M17 7H7M17 7v10"
+                      />
+                    </svg>
+                  </button>
                 </div>
-              </form>
+              </div>
+            </form>
             </div>
           </div>
         </div>

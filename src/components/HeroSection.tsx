@@ -31,8 +31,7 @@ export default function HeroSection() {
         <div className="lg:hidden space-y-6">
           {/* Hero Text */}
           <h1 className="font-bold text-gray-900 leading-[1.1] flex flex-wrap items-end text-[38px]">
-            <span>We design & develop digital products for</span>
-            <br className="basis-full" />
+            <span className="mb-2">We design & develop digital products for</span>
             <br className="basis-full" />
             <TextRotate
               texts={words}
@@ -141,7 +140,7 @@ export default function HeroSection() {
             <h1 className="font-bold text-gray-900 mb-8 leading-[1.1] flex flex-wrap items-end text-7xl">
               <span>We design & develop</span>
               <br className="basis-full" />
-              <span>digital products for</span>
+              <span className="mb-2">digital products for</span>
               <br className="basis-full" />
               <TextRotate
                 texts={words}

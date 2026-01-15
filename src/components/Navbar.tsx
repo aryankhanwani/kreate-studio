@@ -89,20 +89,13 @@ export default function Navbar() {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <Link href="/services" className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium transition-colors py-2">
+              <Link href="/services" className="relative text-gray-700 hover:text-gray-900 font-medium transition-colors group">
                 <span>Services</span>
-                <svg
-                  className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full"></span>
               </Link>
 
               {/* Dropdown Menu - Two Column Layout */}
-              {isServicesOpen && (
+              {false && isServicesOpen && (
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 pt-2 w-[640px]">
                   {/* Invisible bridge to prevent gap issues */}
                   <div className="h-2"></div>

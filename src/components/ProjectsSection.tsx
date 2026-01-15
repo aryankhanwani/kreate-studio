@@ -15,16 +15,16 @@ export default function ProjectsSection() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
           {/* Project 1 */}
-          <div>
+          <Link href="/case-studies/k-couture" className="group">
             <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
               <Image
                 src="/proj-11.png"
                 alt="Project 1"
                 fill
-                className="object-cover object-[50%_100%]"
+                className="object-cover object-[50%_100%] group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">K - Couture Landing page</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">K - Couture Landing page</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
               <span>Web Design</span>
               <span>•</span>
@@ -32,19 +32,19 @@ export default function ProjectsSection() {
               <span>•</span>
               <span>UI/UX</span>
             </div>
-          </div>
+          </Link>
 
           {/* Project 2 */}
-          <div>
+          <Link href="/case-studies/cyberguard" className="group">
             <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
               <Image
                 src="/proj-2.png"
                 alt="Project 2"
                 fill
-                className="object-cover object-[50%_4%]"
+                className="object-cover object-[50%_4%] group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">CyberGuard - AI threat Detection</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">CyberGuard - AI threat Detection</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
               <span>UI/UX </span>
               <span>•</span>
@@ -52,19 +52,19 @@ export default function ProjectsSection() {
               <span>•</span>
               <span>SaaS </span>
             </div>
-          </div>
+          </Link>
 
           {/* Project 3 */}
-          <div>
+          <Link href="/case-studies/senti" className="group">
             <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
               <Image
                 src="/proj-3.png"
                 alt="Project 3"
                 fill
-                className="object-cover object-[50%_0%]"
+                className="object-cover object-[50%_0%] group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Senti - Smart Stablecoin wallet</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">Senti - Smart Stablecoin wallet</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
               <span>Web3</span>
               <span>•</span>
@@ -72,19 +72,19 @@ export default function ProjectsSection() {
               <span>•</span>
               <span>UX Design</span>
             </div>
-          </div>
+          </Link>
 
           {/* Project 4 */}
-          <div>
+          <Link href="/case-studies/myopini" className="group">
             <div className="aspect-video bg-gray-100 mb-4 rounded-xl overflow-hidden relative">
               <Image
                 src="/proj-4.png"
                 alt="Project 4"
                 fill
-                className="object-cover object-[50%_0%] scale-120"
+                className="object-cover object-[50%_0%] scale-120 group-hover:scale-125 transition-transform duration-500"
               />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Myopini - Opinion Trading Platform</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">Myopini - Opinion Trading Platform</h3>
             <div className="flex items-center gap-2 text-base text-gray-500">
               <span>App design</span>
               <span>•</span>
@@ -92,7 +92,7 @@ export default function ProjectsSection() {
               <span>•</span>
               <span>Branding </span>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* View Our Work CTA */}

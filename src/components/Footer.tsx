@@ -75,7 +75,7 @@ export default function Footer() {
                 width={20}
                 height={20}
                 className="w-5 h-5 object-contain"
-              />
+                />
             </Link>
           </div>
 

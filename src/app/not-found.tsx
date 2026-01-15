@@ -1,0 +1,145 @@
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+
+export default function NotFound() {
+  const router = useRouter();
+
+  return (
+    <main className="min-h-screen bg-gray-50 flex items-center justify-center relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, black 1px, transparent 0)`,
+          backgroundSize: '32px 32px',
+        }}></div>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-20 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        {/* 404 Number */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <h1 className="text-[150px] md:text-[200px] lg:text-[280px] font-bold text-gray-900 leading-none">
+            404
+          </h1>
+        </motion.div>
+
+        {/* Funky Message */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-8"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Oops! This page went on vacation
+            <span className="text-gray-400"> without telling us.</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Looks like this page decided to take a creative break. Don't worry though, we've got plenty of other awesome pages for you to explore!
+          </p>
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center"
+        >
+          <button
+            onClick={() => router.back()}
+            className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium group hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl w-full sm:w-auto"
+          >
+            <svg
+              className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Go Back</span>
+          </button>
+
+          <Link
+            href="/"
+            className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full border-2 border-gray-200 hover:border-gray-900 hover:bg-gray-50 transition-all duration-300 font-medium group hover:scale-105 active:scale-95 w-full sm:w-auto"
+          >
+            <span>Back to Home</span>
+            <svg
+              className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </Link>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 bg-transparent text-gray-900 px-8 py-4 rounded-full border-2 border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 font-medium group hover:scale-105 active:scale-95 w-full sm:w-auto"
+          >
+            <span>Contact Us</span>
+            <svg
+              className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </motion.div>
+
+        {/* Quick Links */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-16 pt-8 border-t border-gray-200"
+        >
+          <p className="text-sm text-gray-500 mb-4">Or explore these popular pages:</p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {[
+              { label: 'Services', href: '/services', showIcon: false },
+              { label: 'Case Studies', href: '/case-studies', showIcon: false },
+              { label: 'Our Work', href: 'https://www.figma.com/proto/2suiuZtzEbBlWxNeLYkRWA/Portfolio-Deck?node-id=2-12&t=flwIA4rbapQ5yvO2-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1', showIcon: true },
+            ].map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:text-gray-900 bg-white rounded-full border border-gray-200 hover:border-gray-900 transition-all duration-300"
+              >
+                {link.showIcon && (
+                  <Image
+                    src="/figma-1.png"
+                    alt="Figma"
+                    width={16}
+                    height={16}
+                    className="w-4 h-4"
+                  />
+                )}
+                <span>{link.label}</span>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </main>
+  );
+}
